@@ -9,6 +9,7 @@ namespace NovasFuckery.Util {
     class FuckeryUI {
         internal static UIOption OneAtATime;
         internal static UIOption RandomPosition;
+        internal static UIOption RandomDirection;
         internal static UIOption MildAnnoyance;
         
         //Megajump
@@ -21,6 +22,7 @@ namespace NovasFuckery.Util {
 
             OneAtATime = new UIOption("One At A Time");
             RandomPosition = new UIOption("Random Position");
+            RandomDirection = new UIOption("Random Note Direction");
             MildAnnoyance = new UIOption("Mild Annoyance");
 
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Mega Jump", "NovasFuckery", "MegaJump", "");
