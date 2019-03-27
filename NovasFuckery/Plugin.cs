@@ -13,7 +13,7 @@ namespace NovasFuckery
 {
     public class Plugin : IPlugin {
         public string Name => "Nova's Fuckery";
-        public string Version => "0.0.1";
+        public string Version => "1.0.0";
 
 
         public void OnApplicationStart () {
@@ -27,7 +27,7 @@ namespace NovasFuckery
                 FuckeryUI.SetupUI();
             }
 
-            if(arg0.name == "GameCore") {
+            if(arg0.name == "GameCore" && FuckeryUI.Setup) {
                 FuckeryMods.SetupMods();
             }
         }

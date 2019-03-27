@@ -14,6 +14,7 @@ namespace NovasFuckery.Util
         internal string Name { get; private set; }
         internal string Submenu { get; private set; }
         internal Sprite Sprite { get; private set; }
+        private ToggleOption option;
 
         internal UIOption(string name, Sprite cranberry = null, string menuToAdd = "NovasFuckery", bool addToMenu = true) {
             Name = name;
@@ -23,8 +24,13 @@ namespace NovasFuckery.Util
             if (addToMenu) AddToSubmenu();
         }
 
+        internal UIOption WithConflict(string name) {
+            option.AddConflict(name);
+            return this;
+        }
+
         internal void AddToSubmenu () {
-            var option = GameplaySettingsUI.CreateToggleOption(GameplaySettingsPanels.ModifiersLeft, Name, Submenu, "", Sprite, 0);
+            option = GameplaySettingsUI.CreateToggleOption(GameplaySettingsPanels.ModifiersLeft, Name, Submenu, "", Sprite, 0);
             option.GetValue = Enabled;
             option.OnToggle += (value) => { Enabled = value; };
         }
