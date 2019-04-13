@@ -22,10 +22,6 @@ namespace NovasFuckery.HarmonyPatches
                 moveStartPos.y += UnityEngine.Random.Range(-4, 4);
                 moveEndPos.x *= FuckeryUI.Mirror.Enabled ? -10 : 10;
             }
-
-            if(FuckeryUI.TrueRandom.Enabled || FuckeryUI.RandomEverything.Enabled) {
-                ____noteMovement.GetPrivateField<NoteJump>("_jump").SetPrivateField("_endRotation", Quaternion.Euler(0, 0, UnityEngine.Random.Range(-180f, 180f)));
-            }
         }
     }
 }

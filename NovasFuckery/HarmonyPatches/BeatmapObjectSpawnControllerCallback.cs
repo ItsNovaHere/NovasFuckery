@@ -47,7 +47,7 @@ namespace NovasFuckery.HarmonyPatches
                     noteData.SetProperty("lineIndex", UnityEngine.Random.Range(0, 4));
                 }
 
-                if (FuckeryUI.RandomDirection.Enabled && noteData.noteType.IsBasicNote() && !FuckeryUI.TrueRandom.Enabled) {
+                if (FuckeryUI.RandomDirection.Enabled && noteData.noteType.IsBasicNote()) {
                     noteData.SetProperty("cutDirection", (NoteCutDirection) UnityEngine.Random.Range(1, 7));
                 }
 

@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "https://github.com/nike4613/BSIPA-MetadataFileSchema/master/Schema.json",
+  "author": "ItsNovaHere",
+  "description": "A collection of random mods I come up with.",
+  "gameVersion": "0.13.2",
+  "id": "novas-fuckery",
+  "name": "Nova's Fuckery",
+  "version": "0.0.1",
+  "dependsOn": {
+    "BS Utils": "1.2.3",
+    "CustomUI": "1.5.4"
+  }
+}

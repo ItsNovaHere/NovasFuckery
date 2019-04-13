@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.XR;
 using BS_Utils.Utilities;
-using Button = OVRInput.Button;
 using SaberType = Saber.SaberType;
 
 namespace NovasFuckery.MonoBehaviours

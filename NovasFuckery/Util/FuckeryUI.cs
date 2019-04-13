@@ -11,10 +11,8 @@ namespace NovasFuckery.Util {
         internal static UIOption RandomPositionX;
         internal static UIOption RandomPositionY;
         internal static UIOption RandomDirection;
-        internal static UIOption MildAnnoyance;
         internal static UIOption RandomColors;
         internal static UIOption RandomBombs;
-        internal static UIOption TrueRandom;
         internal static UIOption RandomEverything;
         internal static UIOption InvisibleSabers;
         
@@ -37,10 +35,8 @@ namespace NovasFuckery.Util {
             RandomPositionX = new UIOption("Random Note Line", null, "Randomizers");
             RandomPositionY = new UIOption("Random Note Layer", null, "Randomizers");
             RandomDirection = new UIOption("Random Note Direction", null, "Randomizers");
-            //TrueRandom = new UIOption("True Random Direcitions", null, "Randomizers");
             RandomColors = new UIOption("Random Colors", null, "Randomizers");
             RandomBombs = new UIOption("Random Bombs", null, "Randomizers");
-            //MildAnnoyance = new UIOption("Mild Annoyance"); this broke :(
 
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Mega Jump", "NovasFuckery", "MegaJump", "");
 
