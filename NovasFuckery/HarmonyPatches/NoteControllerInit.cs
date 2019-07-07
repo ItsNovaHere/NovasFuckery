@@ -1,13 +1,7 @@
 ﻿using Harmony;
-using NovasFuckery.MonoBehaviours;
 using NovasFuckery.Util;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
-using BS_Utils.Utilities;
 
 namespace NovasFuckery.HarmonyPatches
 {
@@ -21,6 +15,10 @@ namespace NovasFuckery.HarmonyPatches
                 moveStartPos.y *= 100;
                 moveStartPos.y += UnityEngine.Random.Range(-4, 4);
                 moveEndPos.x *= FuckeryUI.Mirror.Enabled ? -10 : 10;
+            }
+
+            if (FuckeryUI.WideNotes.Enabled) {
+                __instance.gameObject.transform.localScale = new Vector3(2, 1, 1);
             }
         }
     }

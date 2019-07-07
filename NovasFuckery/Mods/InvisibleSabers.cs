@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace NovasFuckery.MonoBehaviours
+namespace NovasFuckery.Mods
 {
     class InvisibleSabers : MonoBehaviour
     {

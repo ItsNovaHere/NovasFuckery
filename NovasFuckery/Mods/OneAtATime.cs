@@ -1,40 +1,41 @@
-﻿using UnityEngine;
-using BS_Utils.Utilities;
+﻿using BS_Utils.Utilities;
+using UnityEngine;
 using SaberType = Saber.SaberType;
 
-namespace NovasFuckery.MonoBehaviours
+namespace NovasFuckery.Mods
 {
-    class OneAtATime : MonoBehaviour
+
+    internal class OneAtATime : MonoBehaviour
     {
-        PlayerController player;
-        VRController controllerL;
-        VRController controllerR;
+        private PlayerController _player;
+        private VRController _controllerL;
+        private VRController _controllerR;
 
-        void Start () {
-            player = GetComponent<PlayerController>();
-            player.rightSaber.gameObject.SetActive(false);
+        private void Start () {
+            _player = GetComponent<PlayerController>();
+            _player.rightSaber.gameObject.SetActive(false);
 
-            controllerL = (VRController) player.leftSaber.GetField("_vrController");
-            controllerR = (VRController) player.rightSaber.GetField("_vrController");
+            _controllerL = (VRController) _player.leftSaber.GetField("_vrController");
+            _controllerR = (VRController) _player.rightSaber.GetField("_vrController");
         }
 
-        void Update () {
-            if (controllerL.triggerValue > .5f && controllerR.triggerValue > .5f) return;
+        private void Update () {
+            if (_controllerL.triggerValue > .5f && _controllerR.triggerValue > .5f) return;
 
-            if (controllerL.triggerValue > .5f) {
-                if (player.rightSaber.gameObject.activeSelf) {
-                    player.leftSaber.gameObject.SetActive(true);
-                    player.rightSaber.gameObject.SetActive(false);
+            if (_controllerL.triggerValue > .5f) {
+                if (_player.rightSaber.gameObject.activeSelf) {
+                    _player.leftSaber.gameObject.SetActive(true);
+                    _player.rightSaber.gameObject.SetActive(false);
                 }
-            } else if(controllerR.triggerValue > .5f) {
-                if (player.leftSaber.gameObject.activeSelf) {
-                    player.rightSaber.gameObject.SetActive(true);
-                    player.leftSaber.gameObject.SetActive(false);
+            } else if(_controllerR.triggerValue > .5f) {
+                if (_player.leftSaber.gameObject.activeSelf) {
+                    _player.rightSaber.gameObject.SetActive(true);
+                    _player.leftSaber.gameObject.SetActive(false);
                 }
             }
         }
 
-        static SaberType GetOpposite(SaberType saberType) {
+        private static SaberType GetOpposite(SaberType saberType) {
             if (saberType == SaberType.SaberA)
                 return SaberType.SaberB;
 

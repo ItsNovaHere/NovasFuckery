@@ -1,9 +1,4 @@
 ﻿using CustomUI.GameplaySettings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace NovasFuckery.Util
@@ -22,6 +17,8 @@ namespace NovasFuckery.Util
             Submenu = menuToAdd;
 
             if (addToMenu) AddToSubmenu();
+            
+            FuckeryUI.Options.Add(this);
         }
 
         internal UIOption WithConflict(string name) {
@@ -33,6 +30,22 @@ namespace NovasFuckery.Util
             option = GameplaySettingsUI.CreateToggleOption(GameplaySettingsPanels.ModifiersLeft, Name, Submenu, "", Sprite, 0);
             option.GetValue = Enabled;
             option.OnToggle += (value) => { Enabled = value; };
+        }
+
+        public static bool operator ==(UIOption option, bool value) {
+            return option != null && option.Enabled == value;
+        }
+
+        public static bool operator !=(UIOption option, bool value) {
+            return option != null && option.Enabled != value;
+        }
+
+        public override bool Equals(object obj) {
+            return obj != null && ((UIOption) obj).Enabled == this.Enabled;
+        }
+
+        protected bool Equals(UIOption other) {
+            return Enabled == other.Enabled && Equals(option, other.option) && string.Equals(Name, other.Name) && string.Equals(Submenu, other.Submenu) && Equals(Sprite, other.Sprite);
         }
     }
 }
