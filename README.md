@@ -5,14 +5,14 @@ All settings are found in the modifier settings menu, on the left.
 
 Settings: 
 
-# Default Options
+### Default Options
 * OneAtATime
 
 * InvisibleSabers
 
 * WideNotes
 
-# Random Options
+### Random Options
 
 * RandomPositionX
 
@@ -26,7 +26,7 @@ Settings:
 
 * RandomEverything
 
-# MissHell Options
+### MissHell Options
 
 * LowerResolutionOnMiss
 
@@ -40,7 +40,7 @@ Settings:
 
 * AYYYYYOnMiss
 
-# MegaJump Options
+### MegaJump Options
 
 * MegaJump
 
