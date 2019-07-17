@@ -19,6 +19,7 @@ namespace NovasFuckery
             BS_Utils.Plugin.LevelDidFinishEvent += Plugin_LevelDidFinishEvent;
 
             MissHell.SetupHell();
+            ChallengeMode.SetupMode();
 
             if (FuckeryUI.OneAtATime.Enabled) 
                 OAAT();

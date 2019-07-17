@@ -7,10 +7,10 @@ namespace NovasFuckery.Util
 
     internal static class FuckeryUI {
         internal static List<UIOption> Options;
-        
+
+        internal static UIOption ChallengeMode;
         internal static UIOption OneAtATime;
         internal static UIOption InvisibleSabers;
-        internal static UIOption WideNotes;
         
         //Random
         internal static UIOption RandomPositionX;
@@ -21,8 +21,6 @@ namespace NovasFuckery.Util
         internal static UIOption RandomEverything;
 
         //MissHell
-        internal static UIOption LowerResolutionOnMiss;
-        internal static UIOption SaberSwapOnMiss;
         internal static UIOption PauseOnMiss;
         internal static UIOption Saber180OnMiss;
         internal static UIOption RoomAdjustOnMiss;
@@ -40,9 +38,9 @@ namespace NovasFuckery.Util
             
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Nova's Fuckery", "MainMenu", "NovasFuckery", "have fun");
 
+            ChallengeMode = new UIOption("Challenge Mode").WithDescription("Randomly enables and disables mods while you play.");
             OneAtATime = new UIOption("One At A Time");
             InvisibleSabers = new UIOption("Invisible Sabers");
-            WideNotes = new UIOption("Wide Notes");
             
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Randomize Things", "NovasFuckery", "Randomizers", "because why not");
 
@@ -55,11 +53,9 @@ namespace NovasFuckery.Util
 
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Miss Hell", "NovasFuckery", "MissHell", "have fun");
 
-            LowerResolutionOnMiss = new UIOption("Lower Resolution On Miss", null, "MissHell");
-            SaberSwapOnMiss = new UIOption("Swap Sabers On Miss", null, "MissHell");
             PauseOnMiss = new UIOption("Pause On Miss", null, "MissHell");
-            Saber180OnMiss = new UIOption("Saber Flip On Miss", null, "MissHell");
-            RoomAdjustOnMiss = new UIOption("Room Adjust On Miss", null, "MissHell");
+            //Saber180OnMiss = new UIOption("Saber Flip On Miss", null, "MissHell");
+            //RoomAdjustOnMiss = new UIOption("Room Adjust On Miss", null, "MissHell");
             AYYYYYOnMiss = new UIOption("AYYYY On Miss", null, "MissHell");
 
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Mega Jump", "NovasFuckery", "MegaJump", "");

@@ -26,6 +26,11 @@ namespace NovasFuckery.Util
             return this;
         }
 
+        internal UIOption WithDescription(string desc) {
+            option.hintText = desc;
+            return this;
+        }
+
         internal void AddToSubmenu () {
             option = GameplaySettingsUI.CreateToggleOption(GameplaySettingsPanels.ModifiersLeft, Name, Submenu, "", Sprite, 0);
             option.GetValue = Enabled;

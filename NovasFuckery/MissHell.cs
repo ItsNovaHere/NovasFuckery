@@ -55,14 +55,6 @@ namespace NovasFuckery
             if (FuckeryUI.AYYYYYOnMiss.Enabled) {
                 Plugin.MissSounds[Random.Range(0, Plugin.MissSounds.Count - 1)].Play();
             }
-
-            if (FuckeryUI.RoomAdjustOnMiss.Enabled) {
-                var x = Random.Range(0, 10);
-                var y = Random.Range(0, 10);
-                var z = Random.Range(0, 10);
-
-                PlayerController.gameObject.transform.Translate(new Vector3(x * 0.1f, y * 0.1f, z * 0.1f));
-            }
         }
 
         private static void MissHell_noteWasCutEvent(BeatmapObjectSpawnController arg1, NoteController arg2, NoteCutInfo arg3) {

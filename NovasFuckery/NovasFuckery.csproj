@@ -35,6 +35,7 @@
     <Compile Include="HarmonyPatches\BeatmapObjectSpawnControllerInit.cs" />
     <Compile Include="HarmonyPatches\NoteControllerInit.cs" />
     <Compile Include="MissHell.cs" />
+    <Compile Include="Mods\ChallengeMode.cs" />
     <Compile Include="Mods\InvisibleSabers.cs" />
     <Compile Include="Mods\OneAtATime.cs" />
     <Compile Include="Plugin.cs" />

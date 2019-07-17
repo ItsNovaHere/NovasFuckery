@@ -16,10 +16,6 @@ namespace NovasFuckery.HarmonyPatches
                 moveStartPos.y += UnityEngine.Random.Range(-4, 4);
                 moveEndPos.x *= FuckeryUI.Mirror.Enabled ? -10 : 10;
             }
-
-            if (FuckeryUI.WideNotes.Enabled) {
-                __instance.gameObject.transform.localScale = new Vector3(2, 1, 1);
-            }
         }
     }
 }
