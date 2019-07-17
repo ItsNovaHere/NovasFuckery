@@ -37,3 +37,6 @@ Settings:
 * NJSFix
 
 * Mirror
+
+
+*You can [give me money](https://ko-fi.com/itsnovahere) if you care.*
