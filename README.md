@@ -10,8 +10,6 @@ Settings:
 
 * InvisibleSabers
 
-* WideNotes
-
 ### Random Options
 
 * RandomPositionX
@@ -28,15 +26,7 @@ Settings:
 
 ### MissHell Options
 
-* LowerResolutionOnMiss
-
-* SaberSwapOnMiss
-
 * PauseOnMiss
-
-* Saber180OnMiss
-
-* RoomAdjustOnMiss
 
 * AYYYYYOnMiss
 
@@ -47,3 +37,6 @@ Settings:
 * NJSFix
 
 * Mirror
+
+
+*You can [give me money](https://ko-fi.com/itsnovahere) if you care.*
