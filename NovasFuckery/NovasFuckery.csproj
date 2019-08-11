@@ -34,6 +34,7 @@
     <Compile Include="HarmonyPatches\BeatmapObjectSpawnControllerCallback.cs" />
     <Compile Include="HarmonyPatches\BeatmapObjectSpawnControllerInit.cs" />
     <Compile Include="HarmonyPatches\NoteControllerInit.cs" />
+    <Compile Include="HarmonyPatches\NoteDebrisInit.cs" />
     <Compile Include="MissHell.cs" />
     <Compile Include="Mods\ChallengeMode.cs" />
     <Compile Include="Mods\InvisibleSabers.cs" />
@@ -69,7 +70,7 @@
     <Reference Include="BS_Utils, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>G:\Steam\steamapps\common\Beat Saber\Plugins\BS_Utils.dll</HintPath>
     </Reference>
-    <Reference Include="IPA.Injector, Version=3.12.22.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="IPA.Injector">
       <HintPath>G:\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\IPA.Injector.dll</HintPath>
     </Reference>
     <Reference Include="IPA.Loader, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -81,6 +82,9 @@
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>G:\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>G:\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>G:\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\UnityEngine.UI.dll</HintPath>

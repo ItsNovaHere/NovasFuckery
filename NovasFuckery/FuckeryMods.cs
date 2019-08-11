@@ -39,6 +39,7 @@ namespace NovasFuckery
         private static void Plugin_LevelDidFinishEvent(StandardLevelScenesTransitionSetupDataSO levelScenesTransitionSetupDataSO, LevelCompletionResults levelCompletionResults) {
             try {
                 MissHell.ResetHell();
+                ChallengeMode.CleanupMode();
             } catch {
 
             }

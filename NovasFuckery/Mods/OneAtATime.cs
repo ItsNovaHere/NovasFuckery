@@ -23,11 +23,19 @@ namespace NovasFuckery.Mods
             if (_controllerL.triggerValue > .5f && _controllerR.triggerValue > .5f) return;
 
             if (_controllerL.triggerValue > .5f) {
+                ActivateSaber(SaberType.SaberA);
+            } else if(_controllerR.triggerValue > .5f) {
+                ActivateSaber(SaberType.SaberB);
+            }
+        }
+
+        private void ActivateSaber(SaberType saberType) {
+            if(saberType == SaberType.SaberA) {
                 if (_player.rightSaber.gameObject.activeSelf) {
                     _player.leftSaber.gameObject.SetActive(true);
                     _player.rightSaber.gameObject.SetActive(false);
                 }
-            } else if(_controllerR.triggerValue > .5f) {
+            } else if(saberType == SaberType.SaberB) {
                 if (_player.leftSaber.gameObject.activeSelf) {
                     _player.rightSaber.gameObject.SetActive(true);
                     _player.leftSaber.gameObject.SetActive(false);

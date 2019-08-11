@@ -9,12 +9,14 @@ namespace NovasFuckery.Util
         internal string Name { get; private set; }
         internal string Submenu { get; private set; }
         internal Sprite Sprite { get; private set; }
+        internal bool AllowedInChallengeMode { get; private set; }
         private ToggleOption option;
 
-        internal UIOption(string name, Sprite cranberry = null, string menuToAdd = "NovasFuckery", bool addToMenu = true) {
+        internal UIOption(string name, string menuToAdd = "NovasFuckery", bool allowedInChallengeMode = true, Sprite cranberry = null, bool addToMenu = true) {
             Name = name;
             Sprite = cranberry;
             Submenu = menuToAdd;
+            AllowedInChallengeMode = allowedInChallengeMode;
 
             if (addToMenu) AddToSubmenu();
             

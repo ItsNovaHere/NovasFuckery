@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CustomUI.GameplaySettings;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace NovasFuckery.Util
         internal static UIOption ChallengeMode;
         internal static UIOption OneAtATime;
         internal static UIOption InvisibleSabers;
+        internal static UIOption UnlimitedDebris;
         
         //Random
         internal static UIOption RandomPositionX;
@@ -22,8 +24,6 @@ namespace NovasFuckery.Util
 
         //MissHell
         internal static UIOption PauseOnMiss;
-        internal static UIOption Saber180OnMiss;
-        internal static UIOption RoomAdjustOnMiss;
         internal static UIOption AYYYYYOnMiss;
 
         //Megajump
@@ -38,33 +38,42 @@ namespace NovasFuckery.Util
             
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Nova's Fuckery", "MainMenu", "NovasFuckery", "have fun");
 
-            ChallengeMode = new UIOption("Challenge Mode").WithDescription("Randomly enables and disables mods while you play.");
-            OneAtATime = new UIOption("One At A Time");
-            InvisibleSabers = new UIOption("Invisible Sabers");
+            ChallengeMode = new UIOption("Challenge Mode", "NovasFuckery", false).WithDescription("Randomly enables and disables mods while you play.");
+            OneAtATime = new UIOption("One At A Time", "NovasFuckery", false);
+            InvisibleSabers = new UIOption("Invisible Sabers", "NovasFuckery", false);
+            UnlimitedDebris = new UIOption("Unlimited Debris");
             
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Randomize Things", "NovasFuckery", "Randomizers", "because why not");
 
-            RandomEverything = new UIOption("Randomize All", null, "Randomizers");
-            RandomPositionX = new UIOption("Random Note Line", null, "Randomizers");
-            RandomPositionY = new UIOption("Random Note Layer", null, "Randomizers");
-            RandomDirection = new UIOption("Random Note Direction", null, "Randomizers");
-            RandomColors = new UIOption("Random Colors", null, "Randomizers");
-            RandomBombs = new UIOption("Random Bombs", null, "Randomizers");
+            RandomEverything = new UIOption("Randomize All", "Randomizers");
+            RandomPositionX = new UIOption("Random Note Line", "Randomizers");
+            RandomPositionY = new UIOption("Random Note Layer", "Randomizers");
+            RandomDirection = new UIOption("Random Note Direction", "Randomizers");
+            RandomColors = new UIOption("Random Colors", "Randomizers");
+            RandomBombs = new UIOption("Random Bombs", "Randomizers");
 
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Miss Hell", "NovasFuckery", "MissHell", "have fun");
 
-            PauseOnMiss = new UIOption("Pause On Miss", null, "MissHell");
-            //Saber180OnMiss = new UIOption("Saber Flip On Miss", null, "MissHell");
-            //RoomAdjustOnMiss = new UIOption("Room Adjust On Miss", null, "MissHell");
-            AYYYYYOnMiss = new UIOption("AYYYY On Miss", null, "MissHell");
+            PauseOnMiss = new UIOption("Pause On Miss", "MissHell");
+            AYYYYYOnMiss = new UIOption("AYYYY On Miss", "MissHell");
 
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Mega Jump", "NovasFuckery", "MegaJump", "");
 
-            MegaJump = new UIOption("Enabled", null, "MegaJump");
-            NJSFix = new UIOption("Fix NJS", null, "MegaJump");
-            Mirror = new UIOption("Mirror", null, "MegaJump");
+            MegaJump = new UIOption("Enabled", "MegaJump");
+            NJSFix = new UIOption("Fix NJS", "MegaJump");
+            Mirror = new UIOption("Mirror", "MegaJump");
 
             Setup = true;
+        }
+
+        internal static void DisableAllMods(bool excludeChallengeMode) {
+            foreach(var option in Options) {
+                if(option.Name != "Challenge Mode") option.Enabled = false;
+            }
+        }
+
+        internal static List<UIOption> GetActiveMods() {
+            return Options.FindAll(x => x.Enabled);
         }
 
         internal static bool ModsEnabled() {
