@@ -26,7 +26,10 @@ namespace NovasFuckery.Mods
         }
 
         internal static void CleanupMode() {
+            if (!FuckeryUI.ChallengeMode.Enabled) return;
+
             FuckeryUI.DisableAllMods(true);
+            timer.Stop();
             timer.Elapsed -= Timer_Elapsed;
             timer = null;
         }
