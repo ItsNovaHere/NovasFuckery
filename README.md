@@ -31,6 +31,8 @@ Settings:
 
 * AYYYYYOnMiss
 
+* nora was here 
+
 ### MegaJump Options
 
 * MegaJump
