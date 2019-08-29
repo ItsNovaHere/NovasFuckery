@@ -1,4 +1,4 @@
-﻿using BS_Utils.Utilities;
+using BS_Utils.Utilities;
 using NovasFuckery.Util;
 using System;
 using System.Collections.Generic;
@@ -10,24 +10,17 @@ using Random = UnityEngine.Random;
 
 namespace NovasFuckery
 {
-    public static class MissHell
+    internal static class MissHell
     {
         internal static BeatmapObjectSpawnController SpawnController;
         internal static StandardLevelGameplayManager PauseManager;
         internal static PlayerController PlayerController;
         internal static SaberManager SaberManager;
 
+        internal static Saber leftSaber;
+        internal static Saber rightSaber;
+
         internal static Vector3 StartPosition;
-
-        internal static List<CustomMissHell> Customs;
-
-        public static void AddCustom(CustomMissHell custom) {
-            Customs.Add(custom);
-        }
-
-        internal static void LoadCustoms() {
-            Customs = new List<CustomMissHell>();
-        }
 
         internal static void SetupHell() {
             SpawnController = Resources.FindObjectsOfTypeAll<BeatmapObjectSpawnController>().FirstOrDefault();
@@ -35,6 +28,9 @@ namespace NovasFuckery
             PlayerController = Resources.FindObjectsOfTypeAll<PlayerController>().FirstOrDefault();
 
             SaberManager = PlayerController.GetField("_saberManager") as SaberManager;
+            leftSaber = SaberManager.GetPrivateField<Saber>("_leftSaber") as Saber;
+            rightSaber = SaberManager.GetPrivateField<Saber>("_rightSaber") as Saber;
+
 
             if (SpawnController) {
                 SpawnController.noteWasMissedEvent += MissHell_noteWasMissedEvent;
@@ -66,10 +62,15 @@ namespace NovasFuckery
                 Plugin.MissSounds[Random.Range(0, Plugin.MissSounds.Count - 1)].Play();
             }
 
-            foreach(CustomMissHell custom in Customs) {
-                if (custom.Option.Enabled) {
-                    custom.OnMiss();
-                }
+            if (FuckeryUI.theButton.Enabled)
+            {
+                // im sorry - nora
+                SpawnController._globalYJumpOffset = (Random.Range(1.4f, 2f) - 1.8f) * 0.5f;
+                //nice
+                var width = Random.Range(0.1f, 10f);
+                // im very sorry
+                leftSaber.transform.localScale = new Vector3(width, width, 1);
+                rightSaber.transform.localScale = new Vector3(width, width, 1);
             }
         }
 

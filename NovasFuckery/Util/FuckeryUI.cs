@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CustomUI.GameplaySettings;
 using UnityEngine;
@@ -31,6 +31,9 @@ namespace NovasFuckery.Util
         internal static UIOption NJSFix;
         internal static UIOption Mirror;
 
+        // norasfuckery alpha
+        internal static UIOption theButton;
+
         internal static bool Setup = false;
 
         internal static void SetupUI () {
@@ -56,6 +59,7 @@ namespace NovasFuckery.Util
 
             PauseOnMiss = new UIOption("Pause On Miss", "MissHell");
             AYYYYYOnMiss = new UIOption("AYYYY On Miss", "MissHell");
+            theButton = new UIOption("nora was here ;^)","MissHell");
 
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Mega Jump", "NovasFuckery", "MegaJump", "");
 

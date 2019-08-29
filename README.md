@@ -1,4 +1,5 @@
-# NovasFuckery
+# Nova/NorasFuckery
+###### *nora didn't actually do anything except emotional support*
 A collection of the random shit I come up with
 
 All settings are found in the modifier settings menu, on the left.
@@ -29,6 +30,8 @@ Settings:
 * PauseOnMiss
 
 * AYYYYYOnMiss
+
+* nora was here :^)
 
 ### MegaJump Options
 
