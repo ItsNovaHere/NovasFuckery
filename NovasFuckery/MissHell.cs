@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 
 namespace NovasFuckery
 {
-    internal static class MissHell
+    public static class MissHell
     {
         internal static BeatmapObjectSpawnController SpawnController;
         internal static StandardLevelGameplayManager PauseManager;
@@ -18,6 +18,16 @@ namespace NovasFuckery
         internal static SaberManager SaberManager;
 
         internal static Vector3 StartPosition;
+
+        internal static List<CustomMissHell> Customs;
+
+        public static void AddCustom(CustomMissHell custom) {
+            Customs.Add(custom);
+        }
+
+        internal static void LoadCustoms() {
+            Customs = new List<CustomMissHell>();
+        }
 
         internal static void SetupHell() {
             SpawnController = Resources.FindObjectsOfTypeAll<BeatmapObjectSpawnController>().FirstOrDefault();
@@ -54,6 +64,12 @@ namespace NovasFuckery
 
             if (FuckeryUI.AYYYYYOnMiss.Enabled) {
                 Plugin.MissSounds[Random.Range(0, Plugin.MissSounds.Count - 1)].Play();
+            }
+
+            foreach(CustomMissHell custom in Customs) {
+                if (custom.Option.Enabled) {
+                    custom.OnMiss();
+                }
             }
         }
 
