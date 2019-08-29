@@ -1,4 +1,5 @@
 ﻿using CustomUI.GameplaySettings;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace NovasFuckery.Util
@@ -53,6 +54,18 @@ namespace NovasFuckery.Util
 
         protected bool Equals(UIOption other) {
             return Enabled == other.Enabled && Equals(option, other.option) && string.Equals(Name, other.Name) && string.Equals(Submenu, other.Submenu) && Equals(Sprite, other.Sprite);
+        }
+
+        //idk visual studio generated this don't complain to me
+        public override int GetHashCode() {
+            var hashCode = 1337733492;
+            hashCode = hashCode * -1521134295 + Enabled.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Submenu);
+            hashCode = hashCode * -1521134295 + EqualityComparer<Sprite>.Default.GetHashCode(Sprite);
+            hashCode = hashCode * -1521134295 + AllowedInChallengeMode.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<ToggleOption>.Default.GetHashCode(option);
+            return hashCode;
         }
     }
 }

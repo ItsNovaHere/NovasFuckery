@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>G:\Steam\steamapps\common\Beat Saber\Plugins\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -65,7 +65,7 @@
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>G:\Steam\steamapps\common\Beat Saber\Beat Saber_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="BeatSaberCustomUI, Version=1.5.11.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="BeatSaberCustomUI">
       <HintPath>G:\Steam\steamapps\common\Beat Saber\Plugins\BeatSaberCustomUI.dll</HintPath>
     </Reference>
     <Reference Include="BS_Utils, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null">
@@ -127,4 +127,7 @@
       <UserProperties manifest_1json__JsonSchema="https://github.com/nike4613/BSIPA-MetadataFileSchema/master/Schema.json" />
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "G:\Steam\steamapps\common\Beat Saber\Plugins\$(ProjectName).dll"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
