@@ -13,7 +13,8 @@ namespace NovasFuckery.Util
         internal static UIOption OneAtATime;
         internal static UIOption InvisibleSabers;
         internal static UIOption UnlimitedDebris;
-        
+        internal static UIOption SadTracking;
+
         //Random
         internal static UIOption RandomPositionX;
         internal static UIOption RandomPositionY;
@@ -25,6 +26,7 @@ namespace NovasFuckery.Util
         //MissHell
         internal static UIOption PauseOnMiss;
         internal static UIOption AYYYYYOnMiss;
+        internal static UIOption TrackingErrorOnMiss;
 
         //Megajump
         internal static UIOption MegaJump;
@@ -45,6 +47,7 @@ namespace NovasFuckery.Util
             OneAtATime = new UIOption("One At A Time", "NovasFuckery", false);
             InvisibleSabers = new UIOption("Invisible Sabers", "NovasFuckery", false);
             UnlimitedDebris = new UIOption("Unlimited Debris");
+            SadTracking = new UIOption("Sad Tracking").WithDescription("pepehands");
             
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Randomize Things", "NovasFuckery", "Randomizers", "because why not");
 
@@ -59,6 +62,7 @@ namespace NovasFuckery.Util
 
             PauseOnMiss = new UIOption("Pause On Miss", "MissHell");
             AYYYYYOnMiss = new UIOption("AYYYY On Miss", "MissHell");
+            TrackingErrorOnMiss = new UIOption("Trackking Error On Miss", "MissHell");
             theButton = new UIOption("nora was here ;^)","MissHell");
 
             GameplaySettingsUI.CreateSubmenuOption(GameplaySettingsPanels.ModifiersLeft, "Mega Jump", "NovasFuckery", "MegaJump", "");

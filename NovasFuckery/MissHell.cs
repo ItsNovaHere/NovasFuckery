@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,6 +13,7 @@ namespace NovasFuckery
 {
     internal static class MissHell
     {
+        internal static bool TrackingError = false;
         internal static BeatmapObjectSpawnController SpawnController;
         internal static StandardLevelGameplayManager PauseManager;
         internal static PlayerController PlayerController;
@@ -22,7 +24,10 @@ namespace NovasFuckery
 
         internal static Vector3 StartPosition;
 
+        private static Timer timer;
+
         internal static void SetupHell() {
+            TrackingError = false;
             SpawnController = Resources.FindObjectsOfTypeAll<BeatmapObjectSpawnController>().FirstOrDefault();
             PauseManager = Resources.FindObjectsOfTypeAll<StandardLevelGameplayManager>().FirstOrDefault();
             PlayerController = Resources.FindObjectsOfTypeAll<PlayerController>().FirstOrDefault();
@@ -38,6 +43,15 @@ namespace NovasFuckery
             }
 
             StartPosition = PlayerController.transform.position;
+
+            timer = new Timer(3000);
+            timer.Elapsed += Timer_Elapsed;
+        }
+
+        private static void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            TrackingError = false;
+            timer.Stop();
         }
 
         internal static void ResetHell() {
@@ -71,6 +85,12 @@ namespace NovasFuckery
                 // im very sorry
                 leftSaber.transform.localScale = new Vector3(width, width, 1);
                 rightSaber.transform.localScale = new Vector3(width, width, 1);
+            }
+
+            if (FuckeryUI.TrackingErrorOnMiss.Enabled)
+            {
+                TrackingError = true;
+                timer.Start();
             }
         }
 

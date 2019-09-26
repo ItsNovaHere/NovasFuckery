@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches\VRControllerUpdatePositionAndRotation.cs" />
     <Compile Include="HarmonyPatches\BeatmapObjectSpawnControllerCallback.cs" />
     <Compile Include="HarmonyPatches\BeatmapObjectSpawnControllerInit.cs" />
     <Compile Include="HarmonyPatches\NoteControllerInit.cs" />
