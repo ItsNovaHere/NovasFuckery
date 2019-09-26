@@ -11,15 +11,21 @@ namespace NovasFuckery.HarmonyPatches
     {
         static bool Prefix()
         {
+            if (FuckeryUI.Setup == false) return true;
             if (FuckeryUI.SadTracking.Enabled)
             {
-                if((int)Time.frameCount % 5 == 0)
+                if(Time.frameCount % 3 != 0)
                 {
                     return false;
                 }
             }
 
-            return !MissHell.TrackingError;
+            if(MissHell.TrackingError)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
