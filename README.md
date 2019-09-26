@@ -12,6 +12,10 @@ Settings:
 
 * InvisibleSabers
 
+* UnlimitedDebris
+
+* SadTracking
+
 ### Random Options
 
 * RandomPositionX
@@ -31,6 +35,8 @@ Settings:
 * PauseOnMiss
 
 * AYYYYYOnMiss
+
+* TrackingErrorOnMiss
 
 * nora was here :^)
 
